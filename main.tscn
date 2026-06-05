@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bf4l3x58hhme0"]
 
 [ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://cw2h651f8bcl4" path="res://Main.gd" id="1_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://b4ua1rkatt8jq" path="res://player.png" id="2_h2yge"]
 [ext_resource type="Script" uid="uid://c66kl75pf35p" path="res://crosshair.gd" id="3_h2yge"]
 
 [node name="Main" type="Node2D" unique_id=1390226069]
+script = ExtResource("1_1bvp3")
 
-[node name="Player" type="CharacterBody2D" parent="." unique_id=1036250430]
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1036250430 groups=["player"]]
 position = Vector2(367, 202)
 up_direction = Vector2(0.9999951, 0.003124985)
 script = ExtResource("1_0xm2m")
@@ -14,5 +16,12 @@ script = ExtResource("1_0xm2m")
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1441082462]
 texture = ExtResource("2_h2yge")
 
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1579196824]
+
 [node name="Crosshair" type="Node2D" parent="." unique_id=500134813]
 script = ExtResource("3_h2yge")
+
+[node name="ColorRect" type="ColorRect" parent="Crosshair" unique_id=1039976222]
+offset_right = 5.0
+offset_bottom = 5.0
+color = Color(1, 0, 0, 1)
