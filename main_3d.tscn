@@ -6,7 +6,12 @@
 [sub_resource type="BoxMesh" id="BoxMesh_aas03"]
 size = Vector3(50, 1, 50)
 
+[sub_resource type="BoxMesh" id="BoxMesh_pt58c"]
+size = Vector3(0.2, 0.2, 0.5)
+
 [sub_resource type="BoxMesh" id="BoxMesh_wiwsh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pt58c"]
 
 [node name="Main3D" type="Node3D" unique_id=1747885889]
 
@@ -26,10 +31,19 @@ script = ExtResource("1_wiwsh")
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.8, 0)
 current = true
 
-[node name="Enemy" type="Node3D" parent="." unique_id=1141579975]
+[node name="Gun" type="Node3D" parent="Player/Neck/Camera3D" unique_id=688569383]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Neck/Camera3D/Gun" unique_id=55217862]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.3, -0.8)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy" type="StaticBody3D" parent="." unique_id=1937601318 groups=["enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
 script = ExtResource("2_pt58c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=1365979529]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_wiwsh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=746602221]
+shape = SubResource("BoxShape3D_pt58c")

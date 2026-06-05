@@ -1,15 +1,42 @@
 extends CharacterBody3D
 
 @export var speed := 5.0
-
 var alive := true
 var health := 100
-
+var can_shoot := true
+var fire_rate := 0.25
+@onready var camera = $Neck/Camera3D
 @onready var neck = $Neck
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+func shoot():
+	if !can_shoot:
+		return
 
+	can_shoot = false
+
+	# recoil
+	rotate_x(deg_to_rad(-1.0))
+
+	# raycast
+	var space_state = get_world_3d().direct_space_state
+	var start = camera.global_position
+	var end = start + (-camera.global_transform.basis.z * 100)
+
+	var query = PhysicsRayQueryParameters3D.create(start, end)
+	var result = space_state.intersect_ray(query)
+
+	if result:
+		var collider = result["collider"]
+		print("HIT:", collider)
+		if collider.has_method("take_damage"):
+			collider.take_damage(25)
+	else:
+		print("MISS")
+
+	await get_tree().create_timer(fire_rate).timeout
+	can_shoot = true
 func take_damage(amount):
 	if !alive:
 		return
@@ -27,6 +54,9 @@ func take_damage(amount):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _unhandled_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			shoot()
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
