@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bf4l3x58hhme0"]
+
+[ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://b4ua1rkatt8jq" path="res://player.png" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://c66kl75pf35p" path="res://crosshair.gd" id="3_h2yge"]
+
+[node name="Main" type="Node2D" unique_id=1390226069]
+
+[node name="Player" type="CharacterBody2D" parent="." unique_id=1036250430]
+position = Vector2(367, 202)
+up_direction = Vector2(0.9999951, 0.003124985)
+script = ExtResource("1_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1441082462]
+texture = ExtResource("2_h2yge")
+
+[node name="Crosshair" type="Node2D" parent="." unique_id=500134813]
+script = ExtResource("3_h2yge")
