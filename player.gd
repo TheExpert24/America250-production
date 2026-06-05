@@ -1,35 +1,49 @@
-extends CharacterBody2D
+extends CharacterBody3D
 
-@export var speed := 250
-@onready var bullet_scene = preload("res://Bullet.tscn")
+@export var speed := 5.0
+
+@onready var neck = $Neck
+
+func _ready():
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+	if event is InputEventMouseButton and event.pressed:
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		rotate_y(-event.relative.x * 0.0015)
+		neck.rotate_x(-event.relative.y * 0.0015)
+
+		neck.rotation.x = clamp(
+			neck.rotation.x,
+			deg_to_rad(-80),
+			deg_to_rad(80)
+		)
 
 func _physics_process(delta):
-	var direction = Vector2.ZERO
+	var input_dir = Vector2.ZERO
 
-	if Input.is_action_pressed("ui_right"):
-		direction.x += 1
-	if Input.is_action_pressed("ui_left"):
-		direction.x -= 1
-	if Input.is_action_pressed("ui_down"):
-		direction.y += 1
 	if Input.is_action_pressed("ui_up"):
-		direction.y -= 1
+		input_dir.y -= 1
+	if Input.is_action_pressed("ui_down"):
+		input_dir.y += 1
+	if Input.is_action_pressed("ui_left"):
+		input_dir.x -= 1
+	if Input.is_action_pressed("ui_right"):
+		input_dir.x += 1
 
-	velocity = direction.normalized() * speed
+	input_dir = input_dir.normalized()
+
+	var forward = -transform.basis.z
+	var right = transform.basis.x
+
+	var direction = (forward * input_dir.y + right * input_dir.x)
+
+	velocity.x = direction.x * speed
+	velocity.z = direction.z * speed
+
 	move_and_slide()
-
-func _input(event):
-	if event.is_action_pressed("shoot"):
-		shoot()
-
-func shoot():
-	print("shoot works")
-
-	var bullet = bullet_scene.instantiate()
-	get_tree().current_scene.add_child(bullet)
-
-	# FORCE visible position (center of screen)
-	bullet.global_position = global_position
-
-	# FORCE visible movement
-	bullet.direction = Vector2.RIGHT

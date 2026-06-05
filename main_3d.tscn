@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dpx5esw3drrxr"]
+
+[ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_wiwsh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_aas03"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="BoxMesh" id="BoxMesh_wiwsh"]
+
+[node name="Main3D" type="Node3D" unique_id=1747885889]
+
+[node name="Ground" type="MeshInstance3D" parent="." unique_id=1926283095]
+custom_aabb = AABB(50, 0, 0, 0, 0, 0)
+mesh = SubResource("BoxMesh_aas03")
+
+[node name="Player" type="CharacterBody3D" parent="." unique_id=1821659019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+script = ExtResource("1_wiwsh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1051961305]
+
+[node name="Neck" type="Node3D" parent="Player/CollisionShape3D" unique_id=1767215771]
+
+[node name="Camera3D" type="Camera3D" parent="Player/CollisionShape3D/Neck" unique_id=1948802641]
+transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.8, 0)
+current = true
+
+[node name="Enemy" type="MeshInstance3D" parent="." unique_id=1217629080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10)
+mesh = SubResource("BoxMesh_wiwsh")
