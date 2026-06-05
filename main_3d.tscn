@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpx5esw3drrxr"]
 
 [ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_wiwsh"]
+[ext_resource type="Script" uid="uid://c3fmkactngqfg" path="res://enemy.gd" id="2_pt58c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aas03"]
 size = Vector3(50, 1, 50)
@@ -25,6 +26,10 @@ script = ExtResource("1_wiwsh")
 transform = Transform3D(1, 0, 0, 0, 0.9659259, 0.25881907, 0, -0.25881907, 0.9659258, 0, 1.8, 0)
 current = true
 
-[node name="Enemy" type="MeshInstance3D" parent="." unique_id=1217629080]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -10)
+[node name="Enemy" type="Node3D" parent="." unique_id=1141579975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+script = ExtResource("2_pt58c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy" unique_id=1365979529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_wiwsh")

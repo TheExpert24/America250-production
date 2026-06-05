@@ -2,10 +2,29 @@ extends CharacterBody3D
 
 @export var speed := 5.0
 
+var alive := true
+var health := 100
+
 @onready var neck = $Neck
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+func take_damage(amount):
+	if !alive:
+		return
+
+	health -= amount
+
+	if health < 0:
+		health = 0
+
+	print("Health:", health)
+
+	if health <= 0:
+		alive = false
+		print("YOU DIED")
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -16,6 +35,7 @@ func _unhandled_input(event):
 
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		rotate_y(-event.relative.x * 0.0015)
+
 		neck.rotate_x(-event.relative.y * 0.0015)
 
 		neck.rotation.x = clamp(
@@ -25,6 +45,9 @@ func _unhandled_input(event):
 		)
 
 func _physics_process(delta):
+	if !alive:
+		return
+
 	var input_dir = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_up"):
@@ -41,7 +64,7 @@ func _physics_process(delta):
 	var forward = -transform.basis.z
 	var right = transform.basis.x
 
-	var direction = (forward * input_dir.y + right * input_dir.x)
+	var direction = forward * input_dir.y + right * input_dir.x
 
 	velocity.x = direction.x * speed
 	velocity.z = direction.z * speed
