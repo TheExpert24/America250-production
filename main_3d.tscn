@@ -7,9 +7,10 @@
 size = Vector3(50, 1, 50)
 
 [sub_resource type="BoxMesh" id="BoxMesh_pt58c"]
-size = Vector3(0.2, 0.2, 0.5)
+size = Vector3(0.2, 0.2, 0.8)
 
 [sub_resource type="BoxMesh" id="BoxMesh_wiwsh"]
+size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pt58c"]
 
@@ -47,3 +48,13 @@ mesh = SubResource("BoxMesh_wiwsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy" unique_id=746602221]
 shape = SubResource("BoxShape3D_pt58c")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=851229771]
+
+[node name="HitMarker" type="Label" parent="UI" unique_id=544752952]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "X"
