@@ -77,6 +77,15 @@ func _physics_process(delta):
 	if !alive:
 		return
 
+	# ADS Zoom
+	var target_fov := 75.0
+
+	if ads:
+		target_fov = 50.0
+
+	camera.fov = lerp(camera.fov, target_fov, 0.2)
+
+	# Movement
 	var input_dir = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_up"):
@@ -105,9 +114,10 @@ func shoot():
 	if !can_shoot:
 		return
 
-	gunshot_sfx.play(0.005)
-
 	can_shoot = false
+
+	if gunshot_sfx:
+		gunshot_sfx.play()
 
 	var space_state = get_world_3d().direct_space_state
 
@@ -126,13 +136,14 @@ func shoot():
 			collider.take_damage(25)
 			collider.flash()
 
-			hit_marker.visible = true
-			hit_marker.scale = Vector2(1.4, 1.4)
+			if hit_marker:
+				hit_marker.visible = true
+				hit_marker.scale = Vector2(1.4, 1.4)
 
-			await get_tree().create_timer(0.05).timeout
+				await get_tree().create_timer(0.05).timeout
 
-			hit_marker.visible = false
-			hit_marker.scale = Vector2(1.0, 1.0)
+				hit_marker.visible = false
+				hit_marker.scale = Vector2(1.0, 1.0)
 
 	else:
 		print("MISS")
