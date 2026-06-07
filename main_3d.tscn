@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpx5esw3drrxr"]
 
 [ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_wiwsh"]
+[ext_resource type="AudioStream" uid="uid://bic3dvaj8ma3" path="res://musketshot.mp3" id="2_ndnd3"]
 [ext_resource type="Script" uid="uid://c3fmkactngqfg" path="res://enemy.gd" id="2_pt58c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aas03"]
@@ -37,6 +38,13 @@ current = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player/Neck/Camera3D/Gun" unique_id=55217862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.3, -0.8)
 mesh = SubResource("BoxMesh_pt58c")
+
+[node name="GunShot" type="AudioStreamPlayer3D" parent="Player" unique_id=703482437]
+stream = ExtResource("2_ndnd3")
+
+[node name="HitSound" type="AudioStreamPlayer3D" parent="Player" unique_id=84283638]
+
+[node name="MissSound" type="AudioStreamPlayer3D" parent="Player" unique_id=270122357]
 
 [node name="Enemy" type="StaticBody3D" parent="." unique_id=1937601318 groups=["enemy"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)

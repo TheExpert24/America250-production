@@ -12,6 +12,7 @@ var fire_rate := 0.25
 @onready var neck = $Neck
 @onready var camera = $Neck/Camera3D
 @onready var hit_marker = null
+@onready var gunshot_sfx = $GunShot
 
 
 func _ready():
@@ -24,6 +25,7 @@ func take_damage(amount):
 		return
 
 	health -= amount
+
 	if health < 0:
 		health = 0
 
@@ -57,6 +59,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 
 		var sens := 0.0015
+
 		if ads:
 			sens = 0.0007
 
@@ -74,7 +77,6 @@ func _physics_process(delta):
 	if !alive:
 		return
 
-	# movement
 	var input_dir = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_up"):
@@ -102,6 +104,8 @@ func _physics_process(delta):
 func shoot():
 	if !can_shoot:
 		return
+
+	gunshot_sfx.play(0.005)
 
 	can_shoot = false
 
