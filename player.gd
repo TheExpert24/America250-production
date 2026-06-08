@@ -16,8 +16,13 @@ var fire_rate := 0.25
 
 
 func _ready():
+	alive = true
+	health = 100
+
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	hit_marker = get_tree().current_scene.get_node("UI/HitMarker")
+
+	print("PLAYER READY - ALIVE =", alive)
 
 
 func take_damage(amount):

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_wiwsh"]
 [ext_resource type="AudioStream" uid="uid://bic3dvaj8ma3" path="res://musketshot.mp3" id="2_ndnd3"]
-[ext_resource type="Script" uid="uid://c3fmkactngqfg" path="res://enemy.gd" id="2_pt58c"]
+[ext_resource type="Script" uid="uid://c3fmkactngqfg" path="res://Enemy.gd" id="2_pt58c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aas03"]
 size = Vector3(50, 1, 50)
