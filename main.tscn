@@ -1,13 +1,39 @@
 [gd_scene format=3 uid="uid://bf4l3x58hhme0"]
 
 [ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://cw2h651f8bcl4" path="res://Main.gd" id="1_1bvp3"]
-[ext_resource type="Texture2D" uid="uid://b4ua1rkatt8jq" path="res://player.png" id="2_h2yge"]
-[ext_resource type="Script" uid="uid://c66kl75pf35p" path="res://crosshair.gd" id="3_h2yge"]
-[ext_resource type="Script" uid="uid://bdt6esvas65yb" path="res://Camera_2d.gd" id="4_lquwl"]
+
+[sub_resource type="GDScript" id="GDScript_ig7tw"]
+script/source = "extends Node2D
+
+@onready var enemy_scene = preload(\"res://Enemy.tscn\")
+
+func _ready():
+	var enemy = enemy_scene.instantiate()
+	add_child(enemy)
+	enemy.global_position = Vector2(600, 200)
+"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0xm2m"]
+load_path = "res://.godot/imported/player.png-2dd0af52de4b213777cd8c9df94c0978.ctex"
+
+[sub_resource type="GDScript" id="GDScript_h2yge"]
+script/source = "extends Camera2D
+
+@export var follow_strength := 0.1
+
+func _process(delta):
+	global_position = global_position.lerp(get_parent().global_position, follow_strength)
+"
+
+[sub_resource type="GDScript" id="GDScript_1bvp3"]
+script/source = "extends Node2D
+
+func _process(delta):
+	global_position = get_global_mouse_position()
+"
 
 [node name="Main" type="Node2D" unique_id=1390226069]
-script = ExtResource("1_1bvp3")
+script = SubResource("GDScript_ig7tw")
 
 [node name="Player" type="CharacterBody2D" parent="." unique_id=1036250430 groups=["player"]]
 position = Vector2(367, 202)
@@ -16,15 +42,15 @@ script = ExtResource("1_0xm2m")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player" unique_id=1441082462]
 visible = false
-texture = ExtResource("2_h2yge")
+texture = SubResource("CompressedTexture2D_0xm2m")
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1579196824]
 position_smoothing_enabled = true
 position_smoothing_speed = 10.0
-script = ExtResource("4_lquwl")
+script = SubResource("GDScript_h2yge")
 
 [node name="Crosshair" type="Node2D" parent="." unique_id=500134813]
-script = ExtResource("3_h2yge")
+script = SubResource("GDScript_1bvp3")
 
 [node name="ColorRect" type="ColorRect" parent="Crosshair" unique_id=1039976222]
 offset_right = 5.0

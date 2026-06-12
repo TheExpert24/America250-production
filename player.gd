@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed := 5.0
+@export var speed := 12.0
 
 var alive := true
 var health := 100
@@ -8,6 +8,8 @@ var health := 100
 var ads := false
 var can_shoot := true
 var fire_rate := 0.25
+
+var game_finished := false
 
 @onready var neck = $Neck
 @onready var camera = $Neck/Camera3D
@@ -26,7 +28,7 @@ func _ready():
 
 
 func take_damage(amount):
-	if !alive:
+	if !alive or game_finished:
 		return
 
 	health -= amount
@@ -44,53 +46,48 @@ func take_damage(amount):
 
 func _unhandled_input(event):
 
+	# ALWAYS allow ESC to release mouse
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		return
+
+	# Block everything else after game ends
+	if game_finished:
+		return
 
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-	# ADS
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			ads = event.pressed
 
-	# SHOOT
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			shoot()
 
-	# MOUSE LOOK
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 
 		var sens := 0.0015
-
 		if ads:
 			sens = 0.0007
 
 		rotate_y(-event.relative.x * sens)
 		neck.rotate_x(-event.relative.y * sens)
 
-		neck.rotation.x = clamp(
-			neck.rotation.x,
-			deg_to_rad(-80),
-			deg_to_rad(80)
-		)
+		neck.rotation.x = clamp(neck.rotation.x, deg_to_rad(-80), deg_to_rad(80))
 
 
 func _physics_process(delta):
-	if !alive:
+	if !alive or game_finished:
 		return
 
-	# ADS Zoom
 	var target_fov := 75.0
-
 	if ads:
 		target_fov = 50.0
 
 	camera.fov = lerp(camera.fov, target_fov, 0.2)
 
-	# Movement
 	var input_dir = Vector2.ZERO
 
 	if Input.is_action_pressed("ui_up"):
@@ -134,8 +131,6 @@ func shoot():
 
 	if result:
 		var collider = result["collider"]
-
-		print("HIT:", collider)
 
 		if collider.has_method("take_damage"):
 			collider.take_damage(25)

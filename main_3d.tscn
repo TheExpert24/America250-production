@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_wiwsh"]
 [ext_resource type="AudioStream" uid="uid://bic3dvaj8ma3" path="res://musketshot.mp3" id="2_ndnd3"]
 [ext_resource type="Script" uid="uid://c3fmkactngqfg" path="res://Enemy.gd" id="2_pt58c"]
+[ext_resource type="Script" uid="uid://qwjvwquq0bpy" path="res://objective_trigger.gd" id="4_nrwyk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aas03"]
 size = Vector3(50, 1, 50)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nrwyk"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_pt58c"]
 size = Vector3(0.2, 0.2, 0.8)
@@ -14,6 +17,11 @@ size = Vector3(0.2, 0.2, 0.8)
 size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pt58c"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ndnd3"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_nrwyk"]
+size = Vector3(5, 5, 5)
 
 [node name="Main3D" type="Node3D" unique_id=1747885889]
 
@@ -26,6 +34,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 script = ExtResource("1_wiwsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player" unique_id=1051961305]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_nrwyk")
 
 [node name="Neck" type="Node3D" parent="Player" unique_id=1767215771]
 
@@ -66,3 +76,20 @@ offset_bottom = 23.0
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
 text = "X"
+
+[node name="ObjectiveLabel" type="Label" parent="UI" unique_id=1720265679]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Go to the British position."
+
+[node name="ObjectiveTrigger" type="Area3D" parent="." unique_id=45674894]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2, -20)
+script = ExtResource("4_nrwyk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectiveTrigger" unique_id=1428620128]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -3)
+shape = SubResource("BoxShape3D_ndnd3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjectiveTrigger" unique_id=103752398]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
+mesh = SubResource("BoxMesh_nrwyk")

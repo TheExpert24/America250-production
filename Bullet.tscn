@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://gi8s8bqv0rdb"]
 
-[ext_resource type="Script" uid="uid://d28a7gkr685xi" path="res://Bullet.gd" id="1_ayd6b"]
+[sub_resource type="GDScript" id="GDScript_x3e43"]
+script/source = "extends Area2D
+
+var direction = Vector2.ZERO
+@export var speed = 300
+
+func _process(delta):
+	position += direction * speed * delta
+"
 
 [node name="Bullet" type="Area2D" unique_id=1050010437]
-script = ExtResource("1_ayd6b")
+script = SubResource("GDScript_x3e43")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1229614411]
 custom_minimum_size = Vector2(10, 10)
