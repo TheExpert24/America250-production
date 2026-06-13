@@ -32,6 +32,7 @@ func take_damage(amount):
 
 	health -= amount
 
+	# Retreat for a short time when hit
 	retreating = true
 	retreat_timer = 1.0
 
@@ -43,26 +44,23 @@ func take_damage(amount):
 
 
 func _process(delta):
-	if !player or !player.alive or !alive or player.game_finished:
+	if !player:
+		return
+
+	if !player.alive:
+		return
+
+	if !alive:
+		return
+
+	if player.game_finished:
 		return
 
 	attack_timer -= delta
 
-	if retreating:
+	var direction = (player.global_position - global_position).normalized()
 
-		retreat_timer -= delta
-
-		var dir = (global_position - player.global_position).normalized()
-		global_position += dir * 1.0 * delta
-
-		if retreat_timer <= 0:
-			retreating = false
-
-	else:
-
-		var dir = (player.global_position - global_position).normalized()
-		global_position += dir * 2.0 * delta
-
+	# Face player
 	look_at(
 		Vector3(
 			player.global_position.x,
@@ -72,10 +70,22 @@ func _process(delta):
 		Vector3.UP
 	)
 
-	if player.game_finished:
-		return
+	if retreating:
+
+		retreat_timer -= delta
+
+		global_position -= direction * 1.0 * delta
+
+		if retreat_timer <= 0:
+			retreating = false
+
+	else:
+
+		global_position += direction * 3.5 * delta
 
 	if global_position.distance_to(player.global_position) < 1.5:
+
 		if attack_timer <= 0:
+
 			player.take_damage(10)
 			attack_timer = 1.0

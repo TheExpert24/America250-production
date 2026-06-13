@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var speed := 12.0
+@export var speed := 5.0
 
 var alive := true
 var health := 100
