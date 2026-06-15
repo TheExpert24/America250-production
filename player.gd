@@ -60,11 +60,17 @@ func _unhandled_input(event):
 
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_RIGHT:
+
 			ads = event.pressed
 
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			shoot()
+			if ads:
+				print("ADS ON")
+			else:
+				print("ADS OFF")
+
+		if event is InputEventMouseButton:
+			if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+				shoot()
 
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 
@@ -127,14 +133,22 @@ func shoot():
 	var end = start + (-camera.global_transform.basis.z * 100)
 
 	var query = PhysicsRayQueryParameters3D.create(start, end)
+
+	# Ignore the player
+	query.exclude = [self]
+
 	var result = space_state.intersect_ray(query)
 
 	if result:
 		var collider = result["collider"]
 
+		print("HIT:", collider.name)
+
 		if collider.has_method("take_damage"):
 			collider.take_damage(25)
-			collider.flash()
+
+			if collider.has_method("flash"):
+				collider.flash()
 
 			if hit_marker:
 				hit_marker.visible = true
