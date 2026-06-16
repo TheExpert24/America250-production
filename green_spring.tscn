@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dxkwutir1x60s" path="res://player.gd" id="1_bgwg6"]
 [ext_resource type="AudioStream" uid="uid://bic3dvaj8ma3" path="res://musketshot.mp3" id="2_8slor"]
 [ext_resource type="Script" uid="uid://c3fmkactngqfg" path="res://Enemy.gd" id="3_6k7uv"]
-[ext_resource type="Script" uid="uid://qwjvwquq0bpy" path="res://objective_trigger.gd" id="4_mqp5v"]
 [ext_resource type="Script" uid="uid://bkug8nppjmtya" path="res://ambush_trigger.gd" id="5_6k7uv"]
 [ext_resource type="Script" uid="uid://cavdilk77ihjg" path="res://mission_manager.gd" id="5_8slor"]
 [ext_resource type="Script" uid="uid://b8ammqxow1vx1" path="res://retreat_trigger.gd" id="6_mqp5v"]
@@ -20,11 +19,7 @@ size = Vector3(0.2, 0.2, 0.8)
 size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pt58c"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ndnd3"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_nrwyk"]
-size = Vector3(5, 5, 5)
+size = Vector3(1, 2, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nrwyk"]
 size = Vector3(10, 4, 10)
@@ -32,11 +27,14 @@ size = Vector3(10, 4, 10)
 [sub_resource type="BoxMesh" id="BoxMesh_mqp5v"]
 size = Vector3(5, 3, 3)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_bgwg6"]
-size = Vector3(10, 4, 10)
+[sub_resource type="BoxShape3D" id="BoxShape3D_6k7uv"]
+size = Vector3(10, 10, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_in5b8"]
 size = Vector3(3, 3, 3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_myx23"]
+size = Vector3(3, 0.1, 30)
 
 [node name="Main3D" type="Node3D" unique_id=1747885889]
 
@@ -104,18 +102,6 @@ offset_right = 60.0
 offset_bottom = 83.0
 text = "30"
 
-[node name="ObjectiveTrigger" type="Area3D" parent="." unique_id=45674894]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2, -20)
-script = ExtResource("4_mqp5v")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ObjectiveTrigger" unique_id=1428620128]
-transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, -3)
-shape = SubResource("BoxShape3D_ndnd3")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="ObjectiveTrigger" unique_id=103752398]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3)
-mesh = SubResource("BoxMesh_nrwyk")
-
 [node name="AmbushTrigger" type="Area3D" parent="." unique_id=100278074]
 script = ExtResource("5_6k7uv")
 
@@ -136,6 +122,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("BoxMesh_wiwsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy2" unique_id=1534508093]
+visible = false
 shape = SubResource("BoxShape3D_pt58c")
 
 [node name="Enemy3" type="StaticBody3D" parent="." unique_id=675100054 groups=["enemy"]]
@@ -154,7 +141,7 @@ script = ExtResource("6_mqp5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RetreatTrigger" unique_id=1170084915]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
-shape = SubResource("BoxShape3D_bgwg6")
+shape = SubResource("BoxShape3D_6k7uv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RetreatTrigger" unique_id=103025825]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
@@ -162,3 +149,6 @@ mesh = SubResource("BoxMesh_in5b8")
 
 [node name="MissionManager" type="Node" parent="." unique_id=1799439189]
 script = ExtResource("5_8slor")
+
+[node name="Road" type="MeshInstance3D" parent="." unique_id=1140977841]
+mesh = SubResource("BoxMesh_myx23")
