@@ -36,6 +36,9 @@ size = Vector3(3, 3, 3)
 [sub_resource type="BoxMesh" id="BoxMesh_myx23"]
 size = Vector3(3, 0.1, 30)
 
+[sub_resource type="BoxMesh" id="BoxMesh_6k7uv"]
+size = Vector3(5, 1.5, 3)
+
 [node name="Main3D" type="Node3D" unique_id=1747885889]
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1926283095]
@@ -103,6 +106,7 @@ offset_bottom = 83.0
 text = "30"
 
 [node name="AmbushTrigger" type="Area3D" parent="." unique_id=100278074]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -42)
 script = ExtResource("5_6k7uv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AmbushTrigger" unique_id=972965571]
@@ -152,3 +156,15 @@ script = ExtResource("5_8slor")
 
 [node name="Road" type="MeshInstance3D" parent="." unique_id=1140977841]
 mesh = SubResource("BoxMesh_myx23")
+
+[node name="BritishCamp" type="MeshInstance3D" parent="." unique_id=147153640]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -40)
+mesh = SubResource("BoxMesh_6k7uv")
+
+[node name="BritishCamp2" type="MeshInstance3D" parent="." unique_id=155429294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, -40)
+mesh = SubResource("BoxMesh_6k7uv")
+
+[node name="SupplyCrate" type="MeshInstance3D" parent="." unique_id=721680872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -38)
+mesh = SubResource("BoxMesh_6k7uv")
