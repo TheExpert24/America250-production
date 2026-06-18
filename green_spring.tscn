@@ -39,6 +39,9 @@ size = Vector3(3, 0.1, 90)
 [sub_resource type="BoxMesh" id="BoxMesh_6k7uv"]
 size = Vector3(5, 1.5, 3)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_6k7uv"]
+height = 4.0
+
 [node name="Main3D" type="Node3D" unique_id=1747885889]
 
 [node name="Ground" type="MeshInstance3D" parent="." unique_id=1926283095]
@@ -106,7 +109,7 @@ offset_bottom = 83.0
 text = "30"
 
 [node name="AmbushTrigger" type="Area3D" parent="." unique_id=100278074]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -62)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -92)
 script = ExtResource("5_6k7uv")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AmbushTrigger" unique_id=972965571]
@@ -141,7 +144,7 @@ mesh = SubResource("BoxMesh_wiwsh")
 shape = SubResource("BoxShape3D_pt58c")
 
 [node name="RetreatTrigger" type="Area3D" parent="." unique_id=305095253]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
 script = ExtResource("6_mqp5v")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RetreatTrigger" unique_id=1170084915]
@@ -169,3 +172,43 @@ mesh = SubResource("BoxMesh_6k7uv")
 [node name="SupplyCrate" type="MeshInstance3D" parent="." unique_id=721680872]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -58)
 mesh = SubResource("BoxMesh_6k7uv")
+
+[node name="Tree1" type="MeshInstance3D" parent="." unique_id=1899446761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree2" type="MeshInstance3D" parent="." unique_id=1927709007]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 0, -15)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree3" type="MeshInstance3D" parent="." unique_id=507168342]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0, -25)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree4" type="MeshInstance3D" parent="." unique_id=1714688324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -30)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree5" type="MeshInstance3D" parent="." unique_id=77303725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 0, -40)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree6" type="MeshInstance3D" parent="." unique_id=124257570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, -45)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree7" type="MeshInstance3D" parent="." unique_id=479969407]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -55)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree8" type="MeshInstance3D" parent="." unique_id=979060126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, -60)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree9" type="MeshInstance3D" parent="." unique_id=336427154]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -70)
+mesh = SubResource("CylinderMesh_6k7uv")
+
+[node name="Tree10" type="MeshInstance3D" parent="." unique_id=1917658581]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12, 0, -75)
+mesh = SubResource("CylinderMesh_6k7uv")
