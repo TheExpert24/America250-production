@@ -11,6 +11,11 @@ var timer_id := 0
 @onready var enemy1 = get_parent().get_node("Enemy1")
 @onready var enemy2 = get_parent().get_node("Enemy2")
 @onready var enemy3 = get_parent().get_node("Enemy3")
+@onready var enemy4 = get_parent().get_node("Enemy4")
+@onready var enemy5 = get_parent().get_node("Enemy5")
+@onready var enemy6 = get_parent().get_node("Enemy6")
+@onready var enemy7 = get_parent().get_node("Enemy7")
+@onready var enemy8 = get_parent().get_node("Enemy8")
 
 @onready var retreat_trigger = get_parent().get_node("RetreatTrigger")
 @onready var player = get_parent().get_node("Player")
@@ -36,13 +41,26 @@ func reset_mission():
 	print("MISSION RESET")
 
 func _set_enemies(state: bool):
-	enemy1.visible = state
-	enemy2.visible = state
-	enemy3.visible = state
 
-	enemy1.process_mode = Node.PROCESS_MODE_INHERIT if state else Node.PROCESS_MODE_DISABLED
-	enemy2.process_mode = Node.PROCESS_MODE_INHERIT if state else Node.PROCESS_MODE_DISABLED
-	enemy3.process_mode = Node.PROCESS_MODE_INHERIT if state else Node.PROCESS_MODE_DISABLED
+	var enemies = [
+		enemy1,
+		enemy2,
+		enemy3,
+		enemy4,
+		enemy5,
+		enemy6,
+		enemy7,
+		enemy8
+	]
+
+	for enemy in enemies:
+		enemy.visible = state
+
+		enemy.process_mode = (
+			Node.PROCESS_MODE_INHERIT
+			if state
+			else Node.PROCESS_MODE_DISABLED
+		)
 
 func start_ambush():
 	if stage != 0:

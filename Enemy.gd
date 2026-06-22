@@ -9,11 +9,19 @@ var player
 var retreating := false
 var retreat_timer := 0.0
 
+var formation_offset := Vector3.ZERO
+
 @onready var mesh = $MeshInstance3D
 
 
 func _ready():
 	player = get_parent().get_node("Player")
+
+	formation_offset = Vector3(
+		randf_range(-4.0, 4.0),
+		0,
+		randf_range(-4.0, 4.0)
+	)
 
 
 func flash():
@@ -32,7 +40,6 @@ func take_damage(amount):
 
 	health -= amount
 
-	# Retreat for a short time when hit
 	retreating = true
 	retreat_timer = 1.0
 
@@ -58,14 +65,17 @@ func _process(delta):
 
 	attack_timer -= delta
 
-	var direction = (player.global_position - global_position).normalized()
+	var target_position = player.global_position + formation_offset
 
-	# Face player
+	var direction = (
+		target_position - global_position
+	).normalized()
+
 	look_at(
 		Vector3(
-			player.global_position.x,
+			target_position.x,
 			global_position.y,
-			player.global_position.z
+			target_position.z
 		),
 		Vector3.UP
 	)
