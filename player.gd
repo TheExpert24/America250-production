@@ -137,22 +137,35 @@ func shoot():
 	if gunshot_sfx:
 		gunshot_sfx.play()
 
+	var bullet_scene = load("res://bullet.glb")
+
+	if bullet_scene:
+		var bullet = bullet_scene.instantiate()
+		get_tree().current_scene.add_child(bullet)
+		var direction = -camera.global_transform.basis.z
+
+		bullet.name = "Bullet"
+		bullet.global_position = camera.global_position + direction * 1.0
+		bullet.look_at(
+			bullet.global_position + direction,
+			Vector3.UP
+			)
+		bullet.rotation_degrees.x -= 90
+		bullet.scale = Vector3(0.003, 0.003, 0.003)
+		bullet.set_meta("dir", direction * 80.0)
+
 	var space_state = get_world_3d().direct_space_state
 
 	var start = camera.global_position
 	var end = start + (-camera.global_transform.basis.z * 100)
 
 	var query = PhysicsRayQueryParameters3D.create(start, end)
-
-	# Ignore the player
 	query.exclude = [self]
 
 	var result = space_state.intersect_ray(query)
 
 	if result:
 		var collider = result["collider"]
-
-		print("HIT:", collider.name)
 
 		if collider.has_method("take_damage"):
 			collider.take_damage(25)
@@ -168,8 +181,15 @@ func shoot():
 
 				hit_marker.visible = false
 				hit_marker.scale = Vector2(1.0, 1.0)
+
 	else:
 		print("MISS")
 
 	await get_tree().create_timer(fire_rate).timeout
 	can_shoot = true
+	
+func _process(delta):
+	for child in get_tree().current_scene.get_children():
+		if child.name.begins_with("Bullet"):
+			if child.has_meta("dir"):
+				child.global_position += child.get_meta("dir") * delta
