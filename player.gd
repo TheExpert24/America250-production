@@ -17,7 +17,7 @@ var game_finished := false
 @onready var camera = $Neck/Camera3D
 @onready var hit_marker = null
 @onready var gunshot_sfx = $GunShot
-
+@onready var health_label = get_tree().current_scene.get_node("UI/HealthLabel")
 
 func _ready():
 	alive = true
@@ -25,7 +25,7 @@ func _ready():
 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	hit_marker = get_tree().current_scene.get_node("UI/HitMarker")
-
+	health_label.text = "Health: " + str(health)
 	print("PLAYER READY - ALIVE =", alive)
 
 
@@ -39,7 +39,7 @@ func take_damage(amount):
 		health = 0
 
 	print("Health:", health)
-
+	health_label.text = "Health: " + str(health)
 	if health <= 0:
 		alive = false
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

@@ -11,6 +11,9 @@ var retreat_timer := 0.0
 
 var formation_offset := Vector3.ZERO
 
+var shoot_range := 15.0
+var shoot_cooldown := 4.0
+
 @onready var mesh = $MeshInstance3D
 
 
@@ -91,11 +94,15 @@ func _process(delta):
 
 	else:
 
-		global_position += direction * 3.5 * delta
+		if global_position.distance_to(player.global_position) > shoot_range:
+			global_position += direction * 3.5 * delta
 
-	if global_position.distance_to(player.global_position) < 1.5:
+	if global_position.distance_to(player.global_position) <= shoot_range:
 
 		if attack_timer <= 0:
 
-			player.take_damage(10)
-			attack_timer = 1.0
+			player.take_damage(3)
+
+			print("BRITISH FIRED")
+
+			attack_timer = shoot_cooldown
