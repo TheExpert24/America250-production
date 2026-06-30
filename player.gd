@@ -50,7 +50,8 @@ func take_damage(amount):
 	if health <= 0:
 		alive = false
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		print("YOU DIED")
+		await get_tree().create_timer(2.0).timeout
+		get_tree().change_scene_to_file("res://died.tscn")
 
 
 func _unhandled_input(event):

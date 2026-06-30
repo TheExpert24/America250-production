@@ -154,6 +154,9 @@ func base_arrived():
 
 	player.game_finished = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	await get_tree().create_timer(2.0).timeout
+
+	get_tree().change_scene_to_file("res://the_end.tscn")
 
 func _set_enemies(state: bool):
 	var enemies = [enemy1, enemy2, enemy3, enemy4, enemy5, enemy6, enemy7, enemy8]

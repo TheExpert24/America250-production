@@ -119,7 +119,6 @@ func complete_mission():
 
 	objective_label.text = "MISSION COMPLETE"
 
-	player.game_finished = true
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	await get_tree().create_timer(2.0).timeout
 
-	print("MISSION COMPLETE")
+	get_tree().change_scene_to_file("res://mission_1_done.tscn")

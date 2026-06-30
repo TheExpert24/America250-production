@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://y72le7rswa4k"]
+
+[ext_resource type="Script" uid="uid://c6qpshvsv4gha" path="res://timer.gd" id="1_xr74c"]
+
+[node name="TitleCard" type="Control" unique_id=1286595014]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1083.0
+script = ExtResource("1_xr74c")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=416793836]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1915.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="." unique_id=1041704588]
+layout_mode = 0
+offset_left = 755.0
+offset_top = 381.0
+offset_right = 1134.0
+offset_bottom = 567.0
+text = "America 250
+
+
+
+
+
+Celebrating 250 years of American Independence"
+horizontal_alignment = 1

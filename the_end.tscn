@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bh46wejvlq4wd"]
+
+[ext_resource type="Script" uid="uid://dqx6d585xs356" path="res://the_end.gd" id="1_eqkr4"]
+
+[node name="TheEnd" type="Control" unique_id=1882150573]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1919.0
+offset_bottom = 1075.0
+script = ExtResource("1_eqkr4")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=295992356]
+layout_mode = 0
+offset_right = 1917.0
+offset_bottom = 1077.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=154312362]
+layout_mode = 0
+offset_right = 1918.0
+offset_bottom = 1077.0
+text = "
+
+
+
+
+
+
+
+You are true American hero. 
+Without your help, we may have lost the war. Thank you for playing. Remain patriotic. 
+Press Enter to play again.
+
+
+
+
+
+
+
+
+
+America 250
+
+A product of Nixon Incorporated
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Celebrating 250 years of American Independence. "
+horizontal_alignment = 1

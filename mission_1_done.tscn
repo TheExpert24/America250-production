@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bq1e70frir67s"]
+
+[ext_resource type="Script" uid="uid://dnn7a2ugfqrb0" path="res://mission_1_done.gd" id="1_yl3hr"]
+
+[node name="Mission1Done" type="Control" unique_id=1286595014]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1083.0
+script = ExtResource("1_yl3hr")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=416793836]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = 1.0
+offset_right = 1915.0
+offset_bottom = 1080.0
+
+[node name="Label" type="Label" parent="." unique_id=1041704588]
+layout_mode = 0
+offset_left = 316.0
+offset_top = 372.0
+offset_right = 1663.0
+offset_bottom = 567.0
+text = "That was an embarrasment. 
+
+The British fed us fake information about crossing the James River and we fell for it. 
+More than 110 of our bit the bullet. The French though have made great progress with keeping the British on the run. 
+The Seige of Yorktown is our only hope in winning the war. We can trap Cornwallis and his men near the York River.
+
+George Washington will have a suprise for you before the battle. Make sure not to fail. "
+horizontal_alignment = 1

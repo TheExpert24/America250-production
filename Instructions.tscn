@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://30vloloig2oe"]
+
+[ext_resource type="Script" uid="uid://blumcei1ulmph" path="res://instructions.gd" id="1_4o8m3"]
+
+[node name="Control" type="Control" unique_id=361205958]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4o8m3")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1031770088]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 47.95
+anchor_bottom = 26.975
+offset_top = 2.0
+offset_bottom = 2.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=153040593]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1090.0
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+Instructions:
+
+It is July of 1781, and you are a soldier for the United States of America. 
+You will be fighting in the Battle of Green Spring and the Seige of Yorktown, the last two battles of the war that made America: the Revolutionary War. 
+
+How  to play:
+
+WASD or Arrows to move around
+Left click will shoot the musket, Right click turns on the sites"
+horizontal_alignment = 1

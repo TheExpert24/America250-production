@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://jm6d2oj7vk2u"]
+
+[ext_resource type="Script" uid="uid://bb2bqi72ijsc1" path="res://died.gd" id="1_2fs67"]
+
+[node name="Died" type="Control" unique_id=28354456]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1915.0
+offset_bottom = 1077.0
+script = ExtResource("1_2fs67")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1814033996]
+layout_mode = 0
+offset_right = 1916.0
+offset_bottom = 1076.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=89428507]
+layout_mode = 0
+offset_right = 1915.0
+offset_bottom = 1073.0
+text = "
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+You Died. Press Enter to restart the game"
+horizontal_alignment = 1
