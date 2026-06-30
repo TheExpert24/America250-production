@@ -11,6 +11,7 @@ var ads := false
 var can_shoot := true
 var fire_rate := 0.25
 
+var in_tank := false
 var game_finished := false
 
 @onready var neck = $Neck
@@ -19,18 +20,23 @@ var game_finished := false
 @onready var gunshot_sfx = $GunShot
 @onready var health_label = get_tree().current_scene.get_node("UI/HealthLabel")
 
+@onready var tank = get_parent().get_node("Tank")
+
+
 func _ready():
 	alive = true
 	health = 100
 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 	hit_marker = get_tree().current_scene.get_node("UI/HitMarker")
 	health_label.text = "Health: " + str(health)
+
 	print("PLAYER READY - ALIVE =", alive)
 
 
 func take_damage(amount):
-	if !alive or game_finished:
+	if !alive or game_finished or in_tank:
 		return
 
 	health -= amount
@@ -40,6 +46,7 @@ func take_damage(amount):
 
 	print("Health:", health)
 	health_label.text = "Health: " + str(health)
+
 	if health <= 0:
 		alive = false
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
@@ -48,30 +55,43 @@ func take_damage(amount):
 
 func _unhandled_input(event):
 
-	# ALWAYS allow ESC to release mouse
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		return
 
-	# Block everything else after game ends
 	if game_finished:
 		return
 
+	if event.is_action_pressed("enter_tank"):
+		if !in_tank and tank.player_can_enter():
+
+			in_tank = true
+			tank.active = true
+			camera.current = false
+			tank.tank_camera.current = true
+			visible = false
+			velocity = Vector3.ZERO
+
+			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+			print("ENTERED TANK")
+
+			return
+
+	# mouse capture
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
+	# ADS + SHOOT
 	if event is InputEventMouseButton:
+
 		if event.button_index == MOUSE_BUTTON_RIGHT:
 			ads = event.pressed
-
-			if ads:
-				print("ADS ON")
-			else:
-				print("ADS OFF")
 
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			shoot()
 
+	# look
 	if event is InputEventMouseMotion and Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 
 		var sens := 0.0015
@@ -87,9 +107,9 @@ func _unhandled_input(event):
 			deg_to_rad(80)
 		)
 
-
 func _physics_process(delta):
-	if !alive or game_finished:
+
+	if !alive or game_finished or in_tank:
 		return
 
 	var target_fov := 75.0
@@ -98,15 +118,12 @@ func _physics_process(delta):
 
 	camera.fov = lerp(camera.fov, target_fov, 0.2)
 
-	# Gravity
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 
-	# Jump
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = jump_velocity
 
-	# Movement input
 	var input_dir = Input.get_vector(
 		"move_left",
 		"move_right",
@@ -129,7 +146,8 @@ func _physics_process(delta):
 
 
 func shoot():
-	if !can_shoot:
+
+	if !can_shoot or in_tank:
 		return
 
 	can_shoot = false
@@ -142,16 +160,17 @@ func shoot():
 	if bullet_scene:
 		var bullet = bullet_scene.instantiate()
 		get_tree().current_scene.add_child(bullet)
+
 		var direction = -camera.global_transform.basis.z
 
 		bullet.name = "Bullet"
 		bullet.global_position = camera.global_position + direction * 1.0
-		bullet.look_at(
-			bullet.global_position + direction,
-			Vector3.UP
-			)
+
+		bullet.look_at(bullet.global_position + direction, Vector3.UP)
 		bullet.rotation_degrees.x -= 90
+
 		bullet.scale = Vector3(0.003, 0.003, 0.003)
+
 		bullet.set_meta("dir", direction * 80.0)
 
 	var space_state = get_world_3d().direct_space_state
@@ -187,8 +206,10 @@ func shoot():
 
 	await get_tree().create_timer(fire_rate).timeout
 	can_shoot = true
-	
+
+
 func _process(delta):
+
 	for child in get_tree().current_scene.get_children():
 		if child.name.begins_with("Bullet"):
 			if child.has_meta("dir"):

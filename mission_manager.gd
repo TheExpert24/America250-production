@@ -123,3 +123,23 @@ func complete_mission():
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 	print("MISSION COMPLETE")
+func start_second_ambush():
+
+	objective_label.text = "BRITISH REINFORCEMENTS!"
+
+	var enemies = [
+		get_parent().get_node("Enemy9"),
+		get_parent().get_node("Enemy10"),
+		get_parent().get_node("Enemy11"),
+		get_parent().get_node("Enemy12"),
+		get_parent().get_node("Enemy13"),
+		get_parent().get_node("Enemy14"),
+		get_parent().get_node("Enemy15"),
+		get_parent().get_node("Enemy16")
+	]
+
+	for enemy in enemies:
+		enemy.visible = true
+		enemy.process_mode = Node.PROCESS_MODE_INHERIT
+
+	print("SECOND AMBUSH STARTED")
