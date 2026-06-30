@@ -49,7 +49,9 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			fire()
 func fire():
+
 	tank_shot_audio.play()
+
 	if !can_fire:
 		return
 
@@ -77,6 +79,28 @@ func fire():
 		shell.scale = Vector3(0.3, 0.3, 0.3)
 
 		shell.set_meta("dir", direction * 150.0)
+		shell.set_meta("life", 0.0)
+
+		var space_state = get_world_3d().direct_space_state
+
+		var blast_center = shell.global_position + direction * 6.0
+
+		var shape = SphereShape3D.new()
+		shape.radius = 5.0
+
+		var query = PhysicsShapeQueryParameters3D.new()
+		query.shape = shape
+		query.transform = Transform3D(Basis(), blast_center)
+		query.collide_with_bodies = true
+		query.collide_with_areas = true
+
+		var results = space_state.intersect_shape(query)
+
+		for r in results:
+			var obj = r.collider
+
+			if obj and obj.has_method("take_damage"):
+				obj.take_damage(100)
 
 	await get_tree().create_timer(reload_time).timeout
 
@@ -85,8 +109,37 @@ func _process(delta):
 
 	for child in get_tree().current_scene.get_children():
 
-		if child.name.begins_with("TankShell"):
+		if child.name.begins_with("TankShell") and child.has_meta("dir"):
 
-			if child.has_meta("dir"):
+			child.global_position += child.get_meta("dir") * delta
 
-				child.global_position += child.get_meta("dir") * delta
+			child.set_meta("life", child.get_meta("life") + delta)
+
+			if child.get_meta("life") > 2.0:
+				explode(child.global_position)
+				child.queue_free()
+func explode(position: Vector3, radius := 6.0):
+
+	var space_state = get_world_3d().direct_space_state
+
+	var shape = SphereShape3D.new()
+	shape.radius = radius
+
+	var query = PhysicsShapeQueryParameters3D.new()
+	query.shape = shape
+
+	var transform = Transform3D(Basis(), position)
+	query.transform = transform
+
+	query.collide_with_bodies = true
+	query.collide_with_areas = true
+
+	query.collision_mask = 0xFFFFFFFF
+
+	var results = space_state.intersect_shape(query)
+
+	for r in results:
+		var obj = r.collider
+
+		if obj and obj.has_method("take_damage"):
+			obj.take_damage(100)

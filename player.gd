@@ -77,7 +77,22 @@ func _unhandled_input(event):
 			print("ENTERED TANK")
 
 			return
+	if event.is_action_pressed("exit_tank") and in_tank:
 
+		in_tank = false
+		tank.active = false
+
+		global_position = tank.global_position + tank.global_transform.basis.z * 3.0
+
+		visible = true
+		camera.current = true
+		tank.tank_camera.current = false
+
+		process_mode = Node.PROCESS_MODE_INHERIT
+
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+		print("EXITED TANK")
 	# mouse capture
 	if event is InputEventMouseButton and event.pressed:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
