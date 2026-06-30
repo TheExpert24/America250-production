@@ -43,7 +43,7 @@ size = Vector3(1, 5, 1)
 albedo_color = Color(1, 0.13333334, 0.09019608, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pt58c"]
-size = Vector3(1, 2, 1)
+size = Vector3(1, 10.598022, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6k7uv"]
 albedo_color = Color(0.105666064, 0.39776096, 0.80156296, 1)
@@ -1370,6 +1370,7 @@ mesh = SubResource("BoxMesh_wiwsh")
 surface_material_override/0 = SubResource("StandardMaterial3D_g55l3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy5" unique_id=285150259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.1879883, 0)
 shape = SubResource("BoxShape3D_pt58c")
 
 [node name="Gun" type="Node3D" parent="Enemy5" unique_id=1353129644]
@@ -1403,18 +1404,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -50)
 script = ExtResource("3_6k7uv")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy7" unique_id=1247095015]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09593773, 1, -0.4722824)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09593773, 1.9811735, -0.4722824)
 mesh = SubResource("BoxMesh_wiwsh")
 surface_material_override/0 = SubResource("StandardMaterial3D_nq60t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy7" unique_id=1092289126]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24824333, 1.111023, -0.42173767)
 shape = SubResource("BoxShape3D_pt58c")
 
 [node name="Gun" type="Node3D" parent="Enemy7" unique_id=702087550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.074543, 2.2692614, -0.7434349)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy7/Gun" unique_id=550635908]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15845394, 0.35243154, -1.4920769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37717724, 1.5361786, -1.0295143)
 mesh = SubResource("BoxMesh_pt58c")
 
 [node name="Enemy8" type="StaticBody3D" parent="." unique_id=982169029 groups=["enemy"]]
@@ -1487,6 +1489,7 @@ mesh = SubResource("BoxMesh_wiwsh")
 surface_material_override/0 = SubResource("StandardMaterial3D_m5gbw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy2" unique_id=1534508093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6043892, 2.0866566, -2.6122742)
 visible = false
 shape = SubResource("BoxShape3D_pt58c")
 
