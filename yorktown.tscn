@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://dfuwwuf35xqen" path="res://Flag_Seamless_Animation.glb" id="25_mut7j"]
 [ext_resource type="Script" uid="uid://bxwnxtt8mk31j" path="res://tank.gd" id="26_qmv5o"]
 [ext_resource type="Script" uid="uid://u1513ted8ll2" path="res://enter_area.gd" id="28_o5nre"]
+[ext_resource type="AudioStream" uid="uid://4r3kwkjj04x6" path="res://tanksound.mp3" id="29_pk8jj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvjrx"]
 albedo_texture_force_srgb = true
@@ -1480,3 +1481,9 @@ script = ExtResource("28_o5nre")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tank/EnterArea" unique_id=875222617]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.291252, 0, -173.93674)
 shape = SubResource("BoxShape3D_o5nre")
+
+[node name="ShellSpawn" type="Marker3D" parent="Tank" unique_id=1319342223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.76324, 3.6142006, -5.3417892)
+
+[node name="TankShotAudio" type="AudioStreamPlayer" parent="Tank" unique_id=376284721]
+stream = ExtResource("29_pk8jj")
