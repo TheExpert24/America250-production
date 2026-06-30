@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://bic3dvaj8ma3" path="res://musketshot.mp3" id="2_8slor"]
 [ext_resource type="Script" uid="uid://c3fmkactngqfg" path="res://Enemy.gd" id="3_6k7uv"]
 [ext_resource type="Script" uid="uid://bkug8nppjmtya" path="res://ambush_trigger.gd" id="5_6k7uv"]
-[ext_resource type="Script" uid="uid://cavdilk77ihjg" path="res://mission_manager.gd" id="5_8slor"]
+[ext_resource type="Script" uid="uid://ccobn2yllmcjw" path="res://mission_managergreensprings.gd" id="6_jcwa4"]
 [ext_resource type="Script" uid="uid://b8ammqxow1vx1" path="res://retreat_trigger.gd" id="6_mqp5v"]
 [ext_resource type="PackedScene" uid="uid://bqtjstde3b23s" path="res://nature/tree_fat.glb" id="7_mqp5v"]
 [ext_resource type="PackedScene" uid="uid://d3qvfplhc4bnp" path="res://nature/tree_pineGroundA.glb" id="8_in5b8"]
@@ -1529,7 +1529,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18264389, 0, 10.094322)
 mesh = SubResource("BoxMesh_in5b8")
 
 [node name="MissionManager" type="Node" parent="." unique_id=1799439189]
-script = ExtResource("5_8slor")
+script = ExtResource("6_jcwa4")
 
 [node name="Road" type="MeshInstance3D" parent="." unique_id=1140977841]
 mesh = SubResource("BoxMesh_myx23")
