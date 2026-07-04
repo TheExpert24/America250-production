@@ -42,7 +42,7 @@ func reset_mission():
 	timer_label.visible = false
 	timer_label.text = ""
 
-	objective_label.text = "General George Washington wants us to head to the palm tree at the end of the road near the base. Go check it out."
+	objective_label.text = "General George Washington wants us to head to the British Base. The French Navy cornered the British from the York River, and we need to come in for the kill."
 
 	_set_enemies(false)
 	_set_second_enemies(false)
@@ -52,21 +52,6 @@ func reset_mission():
 		tank.active = false
 
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-
-func palm_tree_found():
-	if stage != 0:
-		return
-
-	stage = 1
-
-	objective_label.text = "General Washington found this weapon last night. It has 'M1 Abrams' written on it.\nWe think it is from the future. You can either use this 'glitch' or your musket. Press E to enter it and left click to shoot. Head to the British Camp."
-
-	if tank:
-		tank.visible = true
-		tank.active = false
-
-	print("TANK UNLOCKED")
-
 func start_ambush():
 	if stage != 1:
 		return

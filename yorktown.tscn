@@ -16,20 +16,15 @@
 [ext_resource type="PackedScene" uid="uid://ccp8124tpd2dw" path="res://nature/tree_default_dark.glb" id="13_o5nre"]
 [ext_resource type="PackedScene" uid="uid://crcut8pug0gak" path="res://nature/tree_palmShort.glb" id="14_pk8jj"]
 [ext_resource type="PackedScene" uid="uid://dnj64fq44uin" path="res://0c6ba8c8fc210d6cc5c349bdbd88cc2e.glb" id="15_1u4ce"]
-[ext_resource type="Script" uid="uid://cgcpy3xjmokbu" path="res://palm_tree_trigger.gd" id="16_1u4ce"]
 [ext_resource type="PackedScene" uid="uid://ca7by7fnune5m" path="res://Cannon.glb" id="16_mdkbs"]
 [ext_resource type="PackedScene" uid="uid://csoepsf26psn8" path="res://ship.glb" id="17_3qoso"]
 [ext_resource type="PackedScene" uid="uid://dwfcuyy3lded1" path="res://tent_canvas.glb" id="18_xjg03"]
-[ext_resource type="PackedScene" uid="uid://cj7x87fj5ndh" path="res://tank.glb" id="19_xjg03"]
 [ext_resource type="PackedScene" uid="uid://cmtyfdmvw3t3f" path="res://house1.glb" id="21_3h6bb"]
 [ext_resource type="PackedScene" uid="uid://da485vp5xkcfc" path="res://house.glb" id="22_mut7j"]
 [ext_resource type="PackedScene" uid="uid://c3sr8jmfd5xrq" path="res://church1.glb" id="23_fpo4u"]
 [ext_resource type="PackedScene" uid="uid://c8vf1381d6k0a" path="res://church2.glb" id="24_qmv5o"]
 [ext_resource type="PackedScene" uid="uid://cyiv4b6uvqmmm" path="res://characters/us_flag_animation.glb" id="25_fpo4u"]
 [ext_resource type="PackedScene" uid="uid://dfuwwuf35xqen" path="res://Flag_Seamless_Animation.glb" id="25_mut7j"]
-[ext_resource type="Script" uid="uid://bxwnxtt8mk31j" path="res://tank.gd" id="26_qmv5o"]
-[ext_resource type="Script" uid="uid://u1513ted8ll2" path="res://enter_area.gd" id="28_o5nre"]
-[ext_resource type="AudioStream" uid="uid://4r3kwkjj04x6" path="res://tanksound.mp3" id="29_pk8jj"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uvjrx"]
 albedo_texture_force_srgb = true
@@ -138,11 +133,6 @@ sky_material = SubResource("PhysicalSkyMaterial_6k7uv")
 background_mode = 2
 sky = SubResource("Sky_mqp5v")
 volumetric_fog_density = 0.015
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_1u4ce"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_o5nre"]
-size = Vector3(15, 4, 15)
 
 [node name="Main3D" type="Node3D" unique_id=1747885889]
 
@@ -1286,15 +1276,6 @@ transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -10.837475, -3.8146973e-06, 1
 [node name="tree_palmShort8" parent="." unique_id=445871502 instance=ExtResource("14_pk8jj")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -37.36775, -3.8146973e-06, 111.01471)
 
-[node name="PalmTree" parent="." unique_id=1264440674 instance=ExtResource("14_pk8jj")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -0.388278, -3.8146973e-06, 140.92705)
-
-[node name="PalmTreeTrigger" type="Area3D" parent="PalmTree" unique_id=1749161633]
-script = ExtResource("16_1u4ce")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PalmTree/PalmTreeTrigger" unique_id=1035974311]
-shape = SubResource("BoxShape3D_1u4ce")
-
 [node name="tree_palmShort7" parent="." unique_id=1237209321 instance=ExtResource("14_pk8jj")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -46.548252, -3.8146973e-06, 89.177124)
 
@@ -1471,34 +1452,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.196384, 17.029001, -82.982
 
 [node name="us_flag_animation" parent="." unique_id=1295037348 instance=ExtResource("25_fpo4u")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -52.1504, 11.765467, 81.00508)
-
-[node name="Tank" type="CharacterBody3D" parent="." unique_id=1621856882]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 51.22, 0, 125.5)
-visible = false
-script = ExtResource("26_qmv5o")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tank" unique_id=22364909]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.728584, 7.6293945e-06, -25.724342)
-
-[node name="tank" parent="Tank" unique_id=2029176514 instance=ExtResource("19_xjg03")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-
-[node name="CameraMount" type="Node3D" parent="Tank" unique_id=1300622391]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.547516, 0, 154.97076)
-
-[node name="Camera3D" type="Camera3D" parent="Tank/CameraMount" unique_id=1767197671]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -10.590893, 8.176216, -192.82448)
-
-[node name="EnterArea" type="Area3D" parent="Tank" unique_id=1878233683]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.709557, 0, 154.44524)
-script = ExtResource("28_o5nre")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tank/EnterArea" unique_id=875222617]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.291252, 0, -173.93674)
-shape = SubResource("BoxShape3D_o5nre")
-
-[node name="ShellSpawn" type="Marker3D" parent="Tank" unique_id=1319342223]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.76324, 3.6142006, -5.3417892)
-
-[node name="TankShotAudio" type="AudioStreamPlayer" parent="Tank" unique_id=376284721]
-stream = ExtResource("29_pk8jj")
