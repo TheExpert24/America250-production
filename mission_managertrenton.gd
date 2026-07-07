@@ -42,7 +42,7 @@ func reset_mission():
 	timer_label.visible = false
 	timer_label.text = ""
 
-	objective_label.text = "General George Washington wants us to head to the British Base. The French Navy cornered the British from the York River, and we need to come in for the kill."
+	objective_label.text = "General George Washington wants us to head to the British Base. We've got intelligence that 1400 Hessian Mercanaries are working with the British. Head to the base through Trenton."
 
 	_set_enemies(false)
 	_set_second_enemies(false)
@@ -61,7 +61,7 @@ func start_ambush():
 	time_remaining = 30.0
 	timer_id += 1
 
-	objective_label.text = "AMBUSH! The British soldiers have come. Survive 30 seconds."
+	objective_label.text = "AMBUSH! The British soldiers have come. Survive 30 seconds and shoot as many as you can."
 	timer_label.visible = true
 
 	_set_enemies(true)
@@ -82,7 +82,7 @@ func start_timer(id):
 
 	timer_label.text = "0"
 	retreat_allowed = true
-	objective_label.text = "Head to the town of York. The British have control over it."
+	objective_label.text = "Head to the Trenton. Our boys need help rounding up the remaining mercenaries and the small British fleet Cornwallis sent."
 
 func _process(_delta):
 
@@ -115,7 +115,7 @@ func start_second_ambush():
 
 	stage = 3
 
-	objective_label.text = "Cornwallis has sent a second squadron of soldiers to York. Show them what America is made of."
+	objective_label.text = "Here they are. Shoot all of them."
 
 	_set_second_enemies(true)
 
@@ -135,7 +135,7 @@ func base_arrived():
 
 	stage = 5
 
-	objective_label.text = "The British have surrendered.\nThe war is over, and we are now the United States of America."
+	objective_label.text = "The British have surrendered.\nWe've taken Trenton. Good work men."
 
 	player.game_finished = true
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

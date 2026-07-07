@@ -32,7 +32,7 @@ albedo_texture_force_srgb = true
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jcwa4"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_aas03"]
-size = Vector3(120, 1, 150)
+size = Vector3(150, 1, 150)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pn3ry"]
 
@@ -101,7 +101,7 @@ size = Vector3(3, 0.1, 70)
 size = Vector3(3, 0.1, 150)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fpo4u"]
-size = Vector3(3, 0.1, 142)
+size = Vector3(3, 0.1, 145)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mut7j"]
 size = Vector3(3, 0.1, 95)
@@ -897,7 +897,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 116.06479, -1.5258789e-05, -3
 mesh = SubResource("BoxMesh_3h6bb")
 
 [node name="Road6" type="MeshInstance3D" parent="." unique_id=1182536152]
-transform = Transform3D(-0.560639, 0, 0.8280603, 0, 1, 0, -0.8280603, 0, -0.560639, 58.199, -2.2888184e-05, 74.65363)
+transform = Transform3D(-0.560639, 0, 0.8280603, 0, 1, 0, -0.8280603, 0, -0.560639, 57.246044, 0.050712585, 74.922775)
 mesh = SubResource("BoxMesh_fpo4u")
 
 [node name="Road5" type="MeshInstance3D" parent="." unique_id=498743122]
