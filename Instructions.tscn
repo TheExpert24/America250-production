@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://30vloloig2oe"]
 
-[ext_resource type="Script" uid="uid://blumcei1ulmph" path="res://instructions.gd" id="1_4o8m3"]
+[ext_resource type="Script" uid="uid://c0o8mxou7qo03" path="res://green_spring_button.gd" id="2_3yckk"]
+[ext_resource type="Script" uid="uid://bettdycrhmna7" path="res://trenton_button.gd" id="2_nfpij"]
+[ext_resource type="Texture2D" uid="uid://b8qv8lnmii3bi" path="res://green.png" id="2_w0orv"]
+[ext_resource type="Texture2D" uid="uid://caal7emnlaq4q" path="res://york.png" id="3_lkydg"]
+[ext_resource type="Script" uid="uid://diei32tadeolu" path="res://yorktown_button.gd" id="3_nfpij"]
+[ext_resource type="Texture2D" uid="uid://bugbj6fxf66k5" path="res://trenotn.png" id="4_sgcrt"]
+
+[sub_resource type="SystemFont" id="SystemFont_4o8m3"]
 
 [node name="Control" type="Control" unique_id=361205958]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_4o8m3")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1031770088]
 layout_mode = 1
@@ -15,34 +21,68 @@ anchors_preset = -1
 anchor_right = 47.95
 anchor_bottom = 26.975
 offset_top = 2.0
-offset_bottom = 2.0
+offset_right = -97.0
+offset_bottom = -57.0
 color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=153040593]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1090.0
-text = "
+offset_top = 3.0
+offset_right = 1211.0
+offset_bottom = 1073.0
+theme_override_fonts/font = SubResource("SystemFont_4o8m3")
+theme_override_font_sizes/font_size = 28
+text = "Instructions:
 
+- Click one of the buttons below to choose which mission you want to play in. 
 
+- WASD or Arrows to move around in the game.
 
+-Left click to shoot the musket
 
+-Right click to turn on the sites. "
 
+[node name="GreenSpringButton" type="Button" parent="." unique_id=1058052344]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 725.0
+offset_right = 543.0
+offset_bottom = 795.0
+theme_override_font_sizes/font_size = 28
+text = "Battle of Green Spring"
+script = ExtResource("2_3yckk")
 
+[node name="TrentonButton" type="Button" parent="." unique_id=924880661]
+layout_mode = 0
+offset_left = 1126.0
+offset_top = 724.0
+offset_right = 1599.0
+offset_bottom = 794.0
+theme_override_font_sizes/font_size = 28
+text = "Battle of Trenton"
+script = ExtResource("2_nfpij")
 
+[node name="YorktownButton" type="Button" parent="." unique_id=718500822]
+layout_mode = 0
+offset_left = 588.0
+offset_top = 726.0
+offset_right = 1061.0
+offset_bottom = 796.0
+theme_override_font_sizes/font_size = 28
+text = "Siege of Yorktown"
+script = ExtResource("3_nfpij")
 
+[node name="Green" type="Sprite2D" parent="." unique_id=1529081501]
+position = Vector2(292, 570)
+scale = Vector2(0.33451706, 0.40625006)
+texture = ExtResource("2_w0orv")
 
+[node name="York" type="Sprite2D" parent="." unique_id=471990419]
+position = Vector2(817.00006, 567)
+scale = Vector2(0.2713655, 0.5122548)
+texture = ExtResource("3_lkydg")
 
-
-
-
-Instructions:
-
-It is July of 1781, and you are a soldier for the United States of America. 
-You will be fighting in the Battle of Green Spring and the Seige of Yorktown, the last two battles of the war that made America: the Revolutionary War. 
-
-How  to play:
-
-WASD or Arrows to move around
-Left click will shoot the musket, Right click turns on the sites"
-horizontal_alignment = 1
+[node name="Trenotn" type="Sprite2D" parent="." unique_id=610895783]
+position = Vector2(1362, 560)
+scale = Vector2(0.36944947, 0.5053879)
+texture = ExtResource("4_sgcrt")

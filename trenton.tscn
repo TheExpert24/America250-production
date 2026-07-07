@@ -96,10 +96,10 @@ size = Vector3(3, 3, 3)
 size = Vector3(3, 0.1, 70)
 
 [sub_resource type="BoxMesh" id="BoxMesh_3h6bb"]
-size = Vector3(3, 0.1, 100)
+size = Vector3(3, 0.1, 150)
 
 [sub_resource type="BoxMesh" id="BoxMesh_fpo4u"]
-size = Vector3(3, 0.1, 150)
+size = Vector3(3, 0.1, 145)
 
 [sub_resource type="BoxMesh" id="BoxMesh_mb07v"]
 size = Vector3(3, 0.1, 50)
@@ -746,6 +746,880 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
 mesh = SubResource("BoxMesh_pt58c")
 
+[node name="Enemy17" type="StaticBody3D" parent="." unique_id=1021936908 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15735435, 0, -23.633663)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy17" unique_id=578608566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy17" unique_id=151755739]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy17" unique_id=749061704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy17/Gun" unique_id=303356472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy18" type="StaticBody3D" parent="." unique_id=215199196 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.125374, 0, -56.175068)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy18" unique_id=675415092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy18" unique_id=1004553606]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy18" unique_id=365854216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy18/Gun" unique_id=130056871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy19" type="StaticBody3D" parent="." unique_id=136154637 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.94366, 0, -30.418)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy19" unique_id=251360578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy19" unique_id=1439316761]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy19" unique_id=1708690605]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy19/Gun" unique_id=1518195888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy20" type="StaticBody3D" parent="." unique_id=248062338 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.068511, 0, -76.62256)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy20" unique_id=1998704237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy20" unique_id=278290975]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy20" unique_id=2043343442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy20/Gun" unique_id=22979695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy21" type="StaticBody3D" parent="." unique_id=470109206 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.59925, 0, -85.79671)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy21" unique_id=2062597094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy21" unique_id=2010938472]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy21" unique_id=2020669428]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy21/Gun" unique_id=1218252606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy22" type="StaticBody3D" parent="." unique_id=1646533089 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.720982, 0, -23.185726)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy22" unique_id=636376184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy22" unique_id=2050252646]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy22" unique_id=720254114]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy22/Gun" unique_id=1330948802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy23" type="StaticBody3D" parent="." unique_id=1459038036 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.93208, 0, -34.469734)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy23" unique_id=1578640788]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy23" unique_id=1972821871]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy23" unique_id=1150733404]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy23/Gun" unique_id=985572587]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy24" type="StaticBody3D" parent="." unique_id=1330944960 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.667908, 0, -53.99211)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy24" unique_id=1343187700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy24" unique_id=1050754378]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy24" unique_id=431698050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy24/Gun" unique_id=1808309356]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy25" type="StaticBody3D" parent="." unique_id=1062930273 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.48503, 0, -61.65299)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy25" unique_id=260610415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy25" unique_id=937240794]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy25" unique_id=1727803237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy25/Gun" unique_id=1182070554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy26" type="StaticBody3D" parent="." unique_id=122934689 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.86884, 0, -81.89509)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy26" unique_id=2024677811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy26" unique_id=2013182293]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy26" unique_id=411787983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy26/Gun" unique_id=389641105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy27" type="StaticBody3D" parent="." unique_id=1003162735 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.819004, 0, -73.99232)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy27" unique_id=1330764175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy27" unique_id=1556138213]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy27" unique_id=1695701304]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy27/Gun" unique_id=118545651]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy28" type="StaticBody3D" parent="." unique_id=409277535 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2039413, 0, -20.917374)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy28" unique_id=1760434942]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy28" unique_id=1421715917]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy28" unique_id=1416496448]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy28/Gun" unique_id=1634176035]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy29" type="StaticBody3D" parent="." unique_id=1990902117 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.375835, 0, -61.841557)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy29" unique_id=74341554]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy29" unique_id=155072054]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy29" unique_id=1621718596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy29/Gun" unique_id=713033293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy30" type="StaticBody3D" parent="." unique_id=99302624 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.003963, 0, -44.62381)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy30" unique_id=306544893]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy30" unique_id=606215728]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy30" unique_id=808131461]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy30/Gun" unique_id=1537712282]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy31" type="StaticBody3D" parent="." unique_id=684006534 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.0822, 0, -39.455814)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy31" unique_id=399176414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy31" unique_id=239160343]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy31" unique_id=1549984475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy31/Gun" unique_id=1447971213]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy32" type="StaticBody3D" parent="." unique_id=1833229373 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.309605, 0, -68.205185)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy32" unique_id=1216836020]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy32" unique_id=1275141026]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy32" unique_id=1467940080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy32/Gun" unique_id=587825586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy33" type="StaticBody3D" parent="." unique_id=1896327732 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.832832, 0, -30.1123)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy33" unique_id=323899487]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy33" unique_id=954616496]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy33" unique_id=1977895399]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy33/Gun" unique_id=1901008168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy37" type="StaticBody3D" parent="." unique_id=1213916169 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 123.33362, 0, -38.846897)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy37" unique_id=418075894]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy37" unique_id=2087610608]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy37" unique_id=1428658722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy37/Gun" unique_id=1177932851]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy38" type="StaticBody3D" parent="." unique_id=1660422821 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.16971, -1.9073486e-06, -73.97778)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy38" unique_id=2063251588]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy38" unique_id=1854629068]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy38" unique_id=163576125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy38/Gun" unique_id=873958479]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy39" type="StaticBody3D" parent="." unique_id=1014821565 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.32365, 0, -148.08783)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy39" unique_id=1833940854]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy39" unique_id=21799824]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy39" unique_id=1134774212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy39/Gun" unique_id=237138135]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy40" type="StaticBody3D" parent="." unique_id=604945794 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.136194, 0, -145.24965)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy40" unique_id=1159737293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy40" unique_id=699385495]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy40" unique_id=1129587835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy40/Gun" unique_id=1240489032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy41" type="StaticBody3D" parent="." unique_id=604690746 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.07415, -3.8146973e-06, -120.31568)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy41" unique_id=1152077501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy41" unique_id=1257363469]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy41" unique_id=707367549]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy41/Gun" unique_id=1350872079]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy42" type="StaticBody3D" parent="." unique_id=667124263 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 163.21501, 1.9073486e-06, -98.25782)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy42" unique_id=1260717260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy42" unique_id=10273416]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy42" unique_id=579245172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy42/Gun" unique_id=1162062741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy43" type="StaticBody3D" parent="." unique_id=1572432053 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 105.85132, 0, -151.23183)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy43" unique_id=1046588080]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy43" unique_id=1677788178]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy43" unique_id=1093666105]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy43/Gun" unique_id=184856571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy44" type="StaticBody3D" parent="." unique_id=1713078565 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.91707, -1.9073486e-06, -23.003021)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy44" unique_id=733743179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy44" unique_id=1954308920]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy44" unique_id=552062878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy44/Gun" unique_id=12449245]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy45" type="StaticBody3D" parent="." unique_id=847449954 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 101.775444, 0, -29.078363)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy45" unique_id=2100318243]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy45" unique_id=764632441]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy45" unique_id=2072911532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy45/Gun" unique_id=1092480948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy53" type="StaticBody3D" parent="." unique_id=55326018 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 149.13126, 0, -17.995026)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy53" unique_id=1576020019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy53" unique_id=1285780630]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy53" unique_id=1768385338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy53/Gun" unique_id=247075751]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy54" type="StaticBody3D" parent="." unique_id=2114825065 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 108.55228, 1.9073486e-06, 1.3367062)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy54" unique_id=868485189]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy54" unique_id=537666492]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy54" unique_id=344197373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy54/Gun" unique_id=990647217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy55" type="StaticBody3D" parent="." unique_id=923101037 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125.171364, 0, -99.564865)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy55" unique_id=432880951]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy55" unique_id=1203289669]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy55" unique_id=373583835]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy55/Gun" unique_id=205645436]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy56" type="StaticBody3D" parent="." unique_id=586144241 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 165.09325, -1.9073486e-06, -138.35759)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy56" unique_id=1910774416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy56" unique_id=1537876684]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy56" unique_id=1257807787]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy56/Gun" unique_id=2133881160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy57" type="StaticBody3D" parent="." unique_id=1785621117 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.9423, 0, -183.91121)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy57" unique_id=1313762054]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy57" unique_id=2050839327]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy57" unique_id=969453134]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy57/Gun" unique_id=2072677606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy58" type="StaticBody3D" parent="." unique_id=607397028 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 175.74838, 0, 19.45017)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy58" unique_id=1666310781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy58" unique_id=734865082]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy58" unique_id=1132075280]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy58/Gun" unique_id=1351237115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy59" type="StaticBody3D" parent="." unique_id=477455481 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.776474, 0, -120.97628)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy59" unique_id=752583212]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy59" unique_id=416850368]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy59" unique_id=1885834666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy59/Gun" unique_id=2006435648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy60" type="StaticBody3D" parent="." unique_id=2124793500 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 156.88217, 0, -174.75252)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy60" unique_id=968875654]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy60" unique_id=293768373]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy60" unique_id=247811265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy60/Gun" unique_id=1252269375]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy61" type="StaticBody3D" parent="." unique_id=427913438 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 157.84476, -1.9073486e-06, -113.31685)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy61" unique_id=1946275430]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy61" unique_id=2018176326]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy61" unique_id=1129935109]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy61/Gun" unique_id=2097940669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy62" type="StaticBody3D" parent="." unique_id=1766596005 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.91984, 0, -63.137962)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy62" unique_id=137579690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy62" unique_id=1820405870]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy62" unique_id=1616268179]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy62/Gun" unique_id=1144042591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy46" type="StaticBody3D" parent="." unique_id=990430334 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.328766, -1.9073486e-06, -19.410097)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy46" unique_id=324902034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy46" unique_id=1114558581]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy46" unique_id=535089760]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy46/Gun" unique_id=184933491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy47" type="StaticBody3D" parent="." unique_id=1781374087 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 128.87753, 0, -46.449654)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy47" unique_id=283342348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy47" unique_id=925579480]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy47" unique_id=1080297192]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy47/Gun" unique_id=37916820]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy48" type="StaticBody3D" parent="." unique_id=533725776 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 171.2988, -0.049404144, 34.74283)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy48" unique_id=1613094131]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy48" unique_id=1500063939]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy48" unique_id=917903954]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy48/Gun" unique_id=1803406522]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy49" type="StaticBody3D" parent="." unique_id=2000481263 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 166.31326, 0, -30.98085)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy49" unique_id=1226310688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy49" unique_id=1476511198]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy49" unique_id=1484803684]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy49/Gun" unique_id=178593712]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy50" type="StaticBody3D" parent="." unique_id=107167297 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 176.03256, 0, -5.6361027)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy50" unique_id=1732517574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy50" unique_id=2036860104]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy50" unique_id=85450344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy50/Gun" unique_id=731905715]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy51" type="StaticBody3D" parent="." unique_id=2054889519 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.467064, -1.9073486e-06, -16.848227)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy51" unique_id=2072303471]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy51" unique_id=2026931125]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy51" unique_id=2108640325]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy51/Gun" unique_id=778483089]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy52" type="StaticBody3D" parent="." unique_id=889050837 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 127.298, 0, -6.1587677)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy52" unique_id=1596623945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy52" unique_id=1429977499]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy52" unique_id=247234575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy52/Gun" unique_id=1403666344]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy34" type="StaticBody3D" parent="." unique_id=2091330334 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6563044, 1.9073486e-06, -30.318092)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy34" unique_id=1518645728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy34" unique_id=1679465259]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy34" unique_id=162022709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy34/Gun" unique_id=1758195722]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy35" type="StaticBody3D" parent="." unique_id=1204991521 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.123136, 0, -40.711834)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy35" unique_id=2002566201]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy35" unique_id=962094103]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy35" unique_id=389655790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy35/Gun" unique_id=200910040]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
+[node name="Enemy36" type="StaticBody3D" parent="." unique_id=1796746532 groups=["enemy"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.445141, 0, -54.619556)
+script = ExtResource("3_12yce")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy36" unique_id=581638725]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_wiwsh")
+surface_material_override/0 = SubResource("StandardMaterial3D_cq3bb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Enemy36" unique_id=1998778772]
+shape = SubResource("BoxShape3D_pt58c")
+
+[node name="Gun" type="Node3D" parent="Enemy36" unique_id=262956621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8143673, 2.714777, -0.6158562)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Enemy36/Gun" unique_id=1085292737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7087965, -0.29999995, -0.35230827)
+mesh = SubResource("BoxMesh_pt58c")
+
 [node name="RetreatTrigger" type="Area3D" parent="." unique_id=305095253]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 30)
 script = ExtResource("6_8gvp4")
@@ -1235,10 +2109,10 @@ transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 23.446167, 1.9073486
 transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 45.805954, 1.9073486e-06, -6.6624756)
 
 [node name="church2" parent="." unique_id=382486191 instance=ExtResource("23_4jxqc")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 106.99483, 0, -37.498672)
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 58.9731, 0, -60.15731)
 
 [node name="church5" parent="." unique_id=785353772 instance=ExtResource("23_4jxqc")]
-transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 136.54672, 0, -66.51991)
+transform = Transform3D(0.08, 0, 0, 0, 0.08, 0, 0, 0, 0.08, 80.21701, 0, 2.1958313)
 
 [node name="Flag_Seamless_Animation" parent="." unique_id=918348291 instance=ExtResource("24_8xo5f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93.99375, 17.028997, -100.91322)

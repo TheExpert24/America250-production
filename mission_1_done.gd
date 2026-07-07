@@ -7,4 +7,4 @@ func _ready():
 
 	print("GOING TO YORKTOWN")
 
-	get_tree().change_scene_to_file("res://yorktown.tscn")
+	get_tree().change_scene_to_file("res://Instructions.tscn")

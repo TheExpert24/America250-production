@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://y72le7rswa4k"]
 
 [ext_resource type="Script" uid="uid://c6qpshvsv4gha" path="res://timer.gd" id="1_xr74c"]
+[ext_resource type="Texture2D" uid="uid://c20hfit4uh5rg" path="res://america.png" id="2_5cvpf"]
 
 [node name="TitleCard" type="Control" unique_id=1286595014]
 layout_mode = 3
@@ -9,24 +10,19 @@ offset_right = 1920.0
 offset_bottom = 1083.0
 script = ExtResource("1_xr74c")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=416793836]
-modulate = Color(0, 0, 0, 1)
-layout_mode = 0
-offset_top = 1.0
-offset_right = 1915.0
-offset_bottom = 1080.0
+[node name="America" type="Sprite2D" parent="." unique_id=203537827]
+position = Vector2(924.49994, 509)
+scale = Vector2(2.8323076, 2.1767242)
+texture = ExtResource("2_5cvpf")
 
 [node name="Label" type="Label" parent="." unique_id=1041704588]
 layout_mode = 0
-offset_left = 755.0
-offset_top = 381.0
-offset_right = 1134.0
-offset_bottom = 567.0
+offset_left = 631.0
+offset_top = 531.0
+offset_right = 1247.0
+offset_bottom = 814.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "America 250
-
-
-
-
-
-Celebrating 250 years of American Independence"
+"
 horizontal_alignment = 1

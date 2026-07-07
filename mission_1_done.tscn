@@ -18,15 +18,26 @@ offset_bottom = 1080.0
 
 [node name="Label" type="Label" parent="." unique_id=1041704588]
 layout_mode = 0
-offset_left = 316.0
-offset_top = 372.0
-offset_right = 1663.0
-offset_bottom = 567.0
-text = "That was an embarrasment. 
+offset_left = 14.0
+offset_top = 129.0
+offset_right = 1868.0
+offset_bottom = 1054.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 33
+text = "Battle of Green Springs: 
 
-The British fed us fake information about crossing the James River and we fell for it. 
-More than 110 of our bit the bullet. The French though have made great progress with keeping the British on the run. 
-The Seige of Yorktown is our only hope in winning the war. We can trap Cornwallis and his men near the York River.
+The Battle of Green Spring, fought on July 6, 1781, was the largest open-field 
+battle of the Revolutionary War in Virginia. 
+British general Charles Cornwallis set an ambush for 23-year-old 
+general Marquis de Lafayette and his 4,000 American soldiers.
+ Lafayette believed he had an opportunity to strike the British rearguard. 
+However, Cornwallis had laid a trap with 7,000 concealed British soldiers in the woods. 
+Lafayette sent his advance guard, commanded by Anthony Wayne, to engage the British pickets.
+Heavily outnumbered, the Americans faced total annihilation. 
+To save his soldiers, Wayne ordered a direct bayonent charge into the main British line. 
+This aggressive attack stunned Cornwallis, who hesitated, believing 
+that he was facing the main American army rather than just a small advance guard. 
+The pause gave Wayne time to retreat, and Lafayette's army survived intact.
 
-George Washington will have a suprise for you before the battle. Make sure not to fail. "
+"
 horizontal_alignment = 1
