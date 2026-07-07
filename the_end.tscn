@@ -17,47 +17,17 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=154312362]
 layout_mode = 0
+offset_top = 257.0
 offset_right = 1918.0
 offset_bottom = 1077.0
-text = "
+theme_override_font_sizes/font_size = 34
+text = "Siege of Yorktown:
 
-
-
-
-
-
-
-You are true American hero. 
-Without your help, we may have lost the war. Thank you for playing. Remain patriotic. 
-Press Enter to play again.
-
-
-
-
-
-
-
-
-
-America 250
-
-A product of Nixon Incorporated
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Celebrating 250 years of American Independence. "
+The Siege of Yorktown was the final major land engagement of the Revolutionary War. 
+Allied American and French forces led by George Washington trapped General 
+Cornwallis's army in Yorktown, Virginia, forcing him to surrender. 
+Cornwallis had moved his army of 8,000 British troops to Yorktown, 
+expecting to be resupplied by the British navy. 
+Recognizing an opportunity, Washington moved 17,000 American troops to Virginia 
+and a French fleet secured Chesapeake Bay, blocking a British escape or resupplial."
 horizontal_alignment = 1

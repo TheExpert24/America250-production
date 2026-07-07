@@ -6,4 +6,4 @@ func _ready():
 func _unhandled_input(event):
 
 	if event.is_action_pressed("ui_accept"):
-		get_tree().change_scene_to_file("res://TitleCard.tscn")
+		get_tree().change_scene_to_file("res://Instructions.tscn")

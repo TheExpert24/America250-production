@@ -17,17 +17,12 @@ color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label" parent="." unique_id=89428507]
 layout_mode = 0
-offset_right = 1915.0
-offset_bottom = 1073.0
+offset_left = -13.0
+offset_top = -3.0
+offset_right = 1902.0
+offset_bottom = 1070.0
+theme_override_font_sizes/font_size = 32
 text = "
-
-
-
-
-
-
-
-
 
 
 
