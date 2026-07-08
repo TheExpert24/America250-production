@@ -1467,6 +1467,13 @@ offset_right = 1588.0
 offset_bottom = 26.0
 text = "Health: 100"
 
+[node name="KillCount" type="Label" parent="UI" unique_id=1751046288]
+offset_left = 1503.0
+offset_top = 34.0
+offset_right = 1693.0
+offset_bottom = 96.0
+text = "Kill Count: 0"
+
 [node name="AmbushTrigger" type="Area3D" parent="." unique_id=100278074]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -92)
 script = ExtResource("5_6k7uv")

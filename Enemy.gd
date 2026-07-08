@@ -50,6 +50,10 @@ func take_damage(amount):
 
 	if health <= 0:
 		alive = false
+		var player = get_parent().get_node("Player")
+		if player:
+			player.kills += 1
+			player.kill_label.text = "Kills: " + str(player.kills)
 		queue_free()
 
 

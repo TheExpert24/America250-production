@@ -13,7 +13,9 @@ var fire_rate := 0.25
 
 var in_tank := false
 var game_finished := false
+var kills := 0
 
+@onready var kill_label = get_parent().get_node("UI/KillCount")
 @onready var neck = $Neck
 @onready var camera = $Neck/Camera3D
 @onready var hit_marker = null
@@ -33,6 +35,7 @@ func _ready():
 	health_label.text = "Health: " + str(health)
 
 	print("PLAYER READY - ALIVE =", alive)
+	kill_label.text = "Kill Count: 0"
 
 
 func take_damage(amount):
